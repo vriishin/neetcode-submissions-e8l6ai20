@@ -7,7 +7,6 @@
 
 class Solution:
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
-        # in-order dfs should return whole tree's values in sorted order.
         arr = []
         self.dfs(root, arr)
         return arr[k-1]
@@ -15,9 +14,9 @@ class Solution:
     def dfs(self, root, arr):
         if root is None:
             return
-        
-        #left, node, right
+
+
         self.dfs(root.left,arr)
         arr.append(root.val)
         self.dfs(root.right,arr)
-        
+    
